@@ -239,9 +239,9 @@ export default function CommunityCards() {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-6 mb-4">
             {displayedCards.map((card) => (
-              <GlowCard key={card.id} className="cursor-pointer transition-transform duration-30 hover:scale-105">
+              <GlowCard key={card.id} className="cursor-pointer transition-transform duration-30 hover:scale-105 w-full h-full">
                 <div onClick={() => navigate(`/card/${card.id}`)}>
                   <div className="relative h-48 bg-gray-200 dark:bg-gray-700">
                     <img 

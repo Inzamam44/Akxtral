@@ -19,9 +19,9 @@ const glowColorMap = {
 };
 
 const sizeMap = {
-  sm: 'w-400 h-600',
-  md: 'w-600 h-800',
-  lg: 'w-800 h-900'
+  sm: '',
+  md: '',
+  lg: ''
 };
 
 const GlowCard: React.FC<GlowCardProps> = ({ 
@@ -55,10 +55,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
   const { base, spread } = glowColorMap[glowColor];
 
   const getSizeClasses = () => {
-    if (customSize) {
-      return '';
-    }
-    return sizeMap[size];
+    return 'w-full h-auto max-w-xs sm:max-w-sm md:max-w-md';
   };
 
   const getInlineStyles = () => {
@@ -164,8 +161,9 @@ const GlowCard: React.FC<GlowCardProps> = ({
         style={getInlineStyles()}
         className={`
           ${getSizeClasses()}
-          rounded-lg shadow-lg overflow-hidden bg-white relative
+          rounded-2xl shadow-lg overflow-hidden bg-white relative
           ${className}
+          m-auto
         `}
       >
         <div ref={innerRef} data-glow></div>

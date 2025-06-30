@@ -224,7 +224,7 @@ function App() {
   };
 
   const getRoleTag = (role: string) => {
-    const roleColors = {
+    const roleColors: { [key: string]: string } = {
       user: 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300',
       host: 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300',
       admin: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
@@ -512,7 +512,7 @@ function App() {
         {/* Mobile Menu */}
         {showMobileMenu && <MobileMenu />}
 
-        <div className="pt-4">
+        <div className="pt-4 overflow-auto">
           {showLogin && !user ? (
             <Login 
               onSignUpClick={() => {
@@ -542,7 +542,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/games" element={<Games />} />
               <Route path="/" element={
-                <div className="container mx-auto px-4 py-8 pt-32 mt-5">
+                <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 pt-24 sm:pt-32 mt-2 sm:mt-5">
                   {/* Hero Section */}
                   <HeroSection />
                   
